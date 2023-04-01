@@ -2,6 +2,9 @@ package com.spring.usekotlin
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.RecyclerView
+import com.youth.banner.Banner
+import com.youth.banner.adapter.BannerAdapter
 
 class MainActivity : AppCompatActivity() {
 
@@ -15,6 +18,11 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        val mVideoBanner =
+            findViewById<Banner<String, BannerAdapter<String, RecyclerView.ViewHolder>>>(
+                R.id.bannerLayout1
+            )
     }
 
 

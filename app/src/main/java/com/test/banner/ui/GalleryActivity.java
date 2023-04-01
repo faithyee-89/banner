@@ -5,6 +5,7 @@ import android.view.View;
 
 import com.test.banner.R;
 import com.test.banner.adapter.ImageAdapter;
+import com.test.banner.adapter.ImageBottomTitleAdapter;
 import com.test.banner.adapter.ImageNetAdapter;
 import com.test.banner.bean.DataBean;
 import com.youth.banner.Banner;
@@ -23,6 +24,9 @@ public class GalleryActivity extends AppCompatActivity {
     Banner mBanner1;
     @BindView(R.id.banner2)
     Banner mBanner2;
+
+    @BindView(R.id.banner3)
+    Banner mBanner3;
     @BindView(R.id.indicator)
     DrawableIndicator indicator;
 
@@ -38,10 +42,10 @@ public class GalleryActivity extends AppCompatActivity {
         mBanner1.setAdapter(new ImageAdapter(DataBean.getTestData2()));
         mBanner1.setIndicator(new CircleIndicator(this));
         //添加画廊效果
-        mBanner1.setBannerGalleryEffect(50, 10);
+        mBanner1.setBannerGalleryEffect(50, 50, 10, 0);
         //(可以和其他PageTransformer组合使用，比如AlphaPageTransformer，注意但和其他带有缩放的PageTransformer会显示冲突)
         //添加透明效果(画廊配合透明效果更棒)
-        //mBanner1.addPageTransformer(new AlphaPageTransformer());
+//        mBanner1.addPageTransformer(new AlphaPageTransformer());
 
 
         /**
@@ -52,7 +56,10 @@ public class GalleryActivity extends AppCompatActivity {
         //添加魅族效果
         mBanner2.setBannerGalleryMZ(20);
 
-
+        mBanner3.setAdapter(new ImageBottomTitleAdapter(DataBean.getTestData2()));
+        mBanner3.setIndicator(new CircleIndicator(this));
+        //添加画廊效果
+        mBanner3.setBannerGalleryEffect(50, 50, 10, 0);
 
     }
 
